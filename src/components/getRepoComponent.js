@@ -24,7 +24,6 @@ export const GetRepoComponent = () => {
 	const [itemSelected, setItemSelected] = useState(1);
 	const [reposData, setReposData] = useState([]);
 	const [reposFilterData, setReposFilterData] = useState([]);
-	const [initialReposData, setInitialReposData] = useState([]);
 	const [profileData, setProfileData] = useState({});
 	const [selectedDropdown, setSelectedDropdown] = useState("");
 	const [query, setQuery] = useState(null);
@@ -35,14 +34,11 @@ export const GetRepoComponent = () => {
 	const getRepos = async () => {
 		const data = await dispatch(getRepositories());
 		setReposData(data.payload);
-		setInitialReposData(data.payload);
-		console.log("getRepos data", data.payload);
 	};
 
 	const getProfileData = async () => {
 		const data = await dispatch(getProfile());
 		setProfileData(data.payload);
-		console.log("getProfileData payload", data.payload);
 	};
 
 	useEffect(() => {

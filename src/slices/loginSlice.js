@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import LoginDataService from "../services/getRepo.service";
 
-// const initialState = [];
-
 export const initialState = {
 	isLoggedIn: JSON.parse(localStorage.getItem("isLoggedIn")) || false,
 	user: JSON.parse(localStorage.getItem("user")) || null,
@@ -23,10 +21,6 @@ export const login = createAsyncThunk("login", async () => {
 
 const loginSlice = createSlice({
 	name: "login",
-	// initialState: {
-	// 	response: [],
-	// 	isLoading: false,
-	// },
 	initialState,
 
 	extraReducers: {

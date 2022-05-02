@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { login, initialState } from "../slices/loginSlice";
 import GithubIcon from "../static/icons/GitHub.png";
 
@@ -8,18 +7,10 @@ export const Login = () => {
 	const dispatch = useDispatch();
 	const [data, setData] = useState({ errorMessage: "", isLoading: false });
 
-	// const loadingLoginState = useSelector((state) => state?.profile?.isLoading);
 	const { client_id, redirect_uri } = initialState;
 
 	const getLoginData = async (values) => {
 		const data = await dispatch(login(values));
-		// setLoginData(data.payload);
-		console.log("getLoginData payload", data, data.payload);
-	};
-
-	const SubmitValues = (values) => {
-		getLoginData(values);
-		console.log("values", values);
 	};
 
 	useEffect(() => {

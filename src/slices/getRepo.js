@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import RepositoryDataService from "../services/getRepo.service";
 
-// const initialState = [];
-
 export const getRepositories = createAsyncThunk("repositories/retrieve", async () => {
 	const res = await RepositoryDataService.getRepoService();
 	// console.log("res from slice", res.data);

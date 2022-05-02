@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import ProfileDataService from "../services/getprofile.service";
 
-// const initialState = [];
-
 export const getProfile = createAsyncThunk("profile/retrieve", async () => {
 	const res = await ProfileDataService.getProfileService();
 	return res.data;
